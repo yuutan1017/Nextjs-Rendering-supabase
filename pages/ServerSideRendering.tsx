@@ -44,7 +44,7 @@ const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
           );
         })}
       </ul>
-      <div className="flex flex-row">
+      {/* <div className="flex flex-row">
         <Link href="/StaticSiteGenerator" prefetch={false}>
           <a className="my-3 mx-5 text-xl">Link to SSG</a>
         </Link>
@@ -65,7 +65,7 @@ const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
         >
           Route to ISR
         </button>
-      </div>
+      </div> */}
     </Layout>
   );
 };

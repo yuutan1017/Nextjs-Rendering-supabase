@@ -44,7 +44,7 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
           );
         })}
       </ul>
-      <div className="flex flex-row">
+      {/* <div className="flex flex-row">
         <Link href="/ServerSideRendering" prefetch={false}>
           <a className="my-3 mx-5 text-xl">Link to SSR</a>
         </Link>
@@ -65,7 +65,7 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
         >
           Route to SSG
         </button>
-      </div>
+      </div> */}
     </Layout>
   );
 };

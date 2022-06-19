@@ -42,7 +42,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
           );
         })}
       </ul>
-      <div className="flex flex-row">
+      {/* <div className="flex flex-row">
         <Link href="/ServerSideRendering" prefetch={false}>
           <a className="my-3 text-xl mx-5">Link to SSR</a>
         </Link>
@@ -63,7 +63,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
         >
           Route to ISR
         </button>
-      </div>
+      </div> */}
     </Layout>
   );
 };
