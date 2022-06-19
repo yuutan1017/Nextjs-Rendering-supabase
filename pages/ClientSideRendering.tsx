@@ -5,7 +5,7 @@ import { Notice, Task } from '../types/type';
 import { supabase } from '../utils/supabase';
 import { Layout } from '../components/Layout';
 
-const Csr:NextPage = () => {
+const Csr: NextPage = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [notices, setNotices] = useState<Notice[]>([]);
 
@@ -30,7 +30,7 @@ const Csr:NextPage = () => {
 
   return (
     <Layout title="CSR">
-      <h1 className='mb-3 text-blue-500'>SSG + CSR</h1>
+      <h1 className="mb-3 text-2xl text-yellow-600">SSG + CSF</h1>
       <ul className="mb-3">
         {tasks.map((task) => {
           return (
