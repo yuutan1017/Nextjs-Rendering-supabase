@@ -5,7 +5,7 @@ import { Layout } from '../components/Layout';
 const Home: NextPage = () => {
   return (
     <Layout title="Home">
-      {/* <Link href="/ServerSideRendering">
+      <Link href="/ServerSideRendering">
         <div className="text-3xl cursor-pointer mb-5 text-blue-600">Server Side Rendering (SSR)</div>
       </Link>
       <Link href="/StaticSiteGenerator">
@@ -16,8 +16,7 @@ const Home: NextPage = () => {
       </Link>
       <Link href="/IncrementalStaticRegeneration">
         <div className="text-3xl cursor-pointer text-green-600">Incremental Static Regeneration (ISR)</div>
-      </Link> */}
-      <h1>Hello supabase</h1>
+      </Link>
     </Layout>
   );
 };
