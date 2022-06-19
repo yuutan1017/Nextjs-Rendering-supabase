@@ -23,7 +23,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter();
   return (
     <Layout title="SSG-Page">
-      <h1 className="mb-3 text-red-500">Static Site Generator (SSG)</h1>
+      <h1 className="mb-3 text-2xl text-red-500">Static Site Generator (SSG)</h1>
       <ul className="mb-3">
         {tasks.map((task) => {
           return (

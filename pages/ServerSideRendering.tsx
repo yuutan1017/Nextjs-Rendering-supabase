@@ -23,7 +23,7 @@ const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter();
   return (
     <Layout title="SSR">
-      <h1 className="mb-3 text-blue-500">
+      <h1 className="mb-3 text-2xl text-blue-500">
         Server Side Rendering (SSR)
       </h1>
       <ul className="mb-3">

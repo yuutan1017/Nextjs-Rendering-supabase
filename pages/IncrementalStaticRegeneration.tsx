@@ -23,7 +23,7 @@ const Isr: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter();
   return (
     <Layout title="ISR">
-      <h1 className="mb-3 text-green-600">
+      <h1 className="mb-3 text-2xl text-green-600">
         Incremental Static Regeneration (ISR)
       </h1>
       <ul className="mb-3">
