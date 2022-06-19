@@ -28,7 +28,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
         {tasks.map((task) => {
           return (
             <li key={task.id}>
-              <p className="text-lg font-extralight">{task.title}</p>
+              <p className="text-lg font-extrabold">{task.title}</p>
             </li>
           );
         })}
@@ -37,7 +37,7 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
         {notices.map((notice) => {
           return (
             <li key={notice.id}>
-              <p className="text-lg font-extralight">{notice.content}</p>
+              <p className="text-lg font-extrabold">{notice.content}</p>
             </li>
           );
         })}
