@@ -1,4 +1,10 @@
-import '../styles/globals.css';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+
+import { supabase } from '../utils/supabase';
+
 import type { AppProps, NextWebVitalsMetric } from 'next/app';
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
@@ -24,8 +30,42 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
   }
 }
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { retry: false, refetchOnWindowFocus: false },
+  },
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const { push, pathname } = useRouter();
+  const valideteSession = async () => {
+    const user = supabase.auth.user();
+    if (user && pathname === '/') {
+      push('/dashboard');
+    } else if (!user && pathname !== '/') {
+      await push('/');
+    }
+  };
+  supabase.auth.onAuthStateChange((e, _) => {
+    if (e === 'SIGNED_IN' && pathname === '/') {
+      push('/dashboard');
+    }
+    if (e === 'SIGNED_OUT') {
+      push('/');
+    }
+  });
+
+  useEffect(() => {
+    valideteSession();
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+    
+  );
 }
 
 export default MyApp;

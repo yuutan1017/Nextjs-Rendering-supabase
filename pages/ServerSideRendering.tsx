@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { GetServerSideProps, NextPage } from 'next';
 
@@ -44,28 +43,6 @@ const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
           );
         })}
       </ul>
-      {/* <div className="flex flex-row">
-        <Link href="/StaticSiteGenerator" prefetch={false}>
-          <a className="my-3 mx-5 text-xl">Link to SSG</a>
-        </Link>
-        <Link href="/IncrementalStaticRegeneration" prefetch={false}>
-          <a className="my-3 mx-4 text-xl">Link to ISR</a>
-        </Link>
-      </div>
-      <div className="flex flex-row">
-        <button
-          className="mx-5 mb-3 text-xl"
-          onClick={() => router.push('/StaticSiteGenerator')}
-        >
-          Route to SSG
-        </button>
-        <button
-          className="mx-5 mb-3 text-xl"
-          onClick={() => router.push('/IncrementalStaticRegeneration')}
-        >
-          Route to ISR
-        </button>
-      </div> */}
     </Layout>
   );
 };

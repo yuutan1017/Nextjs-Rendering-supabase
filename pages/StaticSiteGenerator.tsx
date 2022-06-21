@@ -1,10 +1,9 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { GetStaticProps, NextPage } from 'next';
 
 import { Layout } from '../components/Layout';
 import { supabase } from '../utils/supabase';
-import { Task, Notice, StaticProps } from '../types/type';
+import { StaticProps } from '../types/type';
 
 export const getStaticProps: GetStaticProps = async () => {
   console.log('getStaticProps/ssg invoked');
@@ -42,28 +41,6 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
           );
         })}
       </ul>
-      {/* <div className="flex flex-row">
-        <Link href="/ServerSideRendering" prefetch={false}>
-          <a className="my-3 text-xl mx-5">Link to SSR</a>
-        </Link>
-        <Link href="/IncrementalStaticRegeneration" prefetch={false}>
-          <a className="my-3 text-xl mx-4">Link to ISR</a>
-        </Link>
-      </div>
-      <div className="flex flex-row">
-        <button
-          className="mx-5 mb-3 text-xl"
-          onClick={() => router.push('/ServerSideRendering')}
-        >
-          Route to SSR
-        </button>
-        <button
-          className="mx-5 mb-3 text-xl"
-          onClick={() => router.push('/IncrementalStaticRegeneration')}
-        >
-          Route to ISR
-        </button>
-      </div> */}
     </Layout>
   );
 };
