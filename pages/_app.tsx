@@ -1,3 +1,5 @@
+import "../styles/globals.css";
+import "tailwindcss/tailwind.css";
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -46,11 +48,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       await push('/');
     }
   };
-  supabase.auth.onAuthStateChange((e, _) => {
-    if (e === 'SIGNED_IN' && pathname === '/') {
+  supabase.auth.onAuthStateChange((event, _) => {
+    if (event === 'SIGNED_IN' && pathname === '/') {
       push('/dashboard');
     }
-    if (e === 'SIGNED_OUT') {
+    if (event === 'SIGNED_OUT') {
       push('/');
     }
   });

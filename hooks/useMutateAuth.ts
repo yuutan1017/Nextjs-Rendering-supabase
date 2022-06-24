@@ -34,5 +34,12 @@ export const useMutateAuth = () => {
       },
     }
   );
-  return {};
+  return {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    loginMutation,
+    registerMutation,
+  };
 };
