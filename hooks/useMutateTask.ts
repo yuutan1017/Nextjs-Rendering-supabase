@@ -58,7 +58,7 @@ export const useMutateTask = () => {
     }
   );
 
-  const deleteTaskMutataion = useMutation(
+  const deleteTaskMutaion = useMutation(
     async (id: string) => {
       const { data, error } = await supabase
         .from('todos')
@@ -84,5 +84,5 @@ export const useMutateTask = () => {
       },
     }
   );
-  return { createTaskMutation, updateTaskMutation, deleteTaskMutataion }
+  return { createTaskMutation, updateTaskMutation, deleteTaskMutaion }
 };
