@@ -4,7 +4,7 @@ import { LogoutIcon, DocumentTextIcon } from '@heroicons/react/solid';
 import { supabase } from '../utils/supabase';
 import { Layout } from '../components/Layout';
 import { TaskList } from '../components/TaskList';
-import { Form } from '../components/Form';
+import { Form } from '../components/TaskForm';
 import { Links } from '../components/Links';
 
 const Dashboard: NextPage = () => {

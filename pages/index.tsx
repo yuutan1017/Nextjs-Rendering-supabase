@@ -67,7 +67,7 @@ const Auth: NextPage = () => {
             className="cursor-pointer font-medium hover:text-indigo-500"
             onClick={() => setIsLogin(!isLogin)}
           >
-            {isLogin ? 'Sign In' : 'Sign Up'}
+            {isLogin ? 'Sign Up' : 'Sign In'}
           </span>
         </div>
       </form>
