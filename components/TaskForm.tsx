@@ -4,7 +4,7 @@ import { supabase } from '../utils/supabase';
 import useStore from '../store';
 import { useMutateTask } from '../hooks/useMutateTask';
 
-export const Form: FC = () => {
+export const TaskForm: FC = () => {
   const { EditedTask } = useStore();
   const { createTaskMutation, updateTaskMutation } = useMutateTask();
   const update = useStore((state) => state.UpdateEditedTask);
