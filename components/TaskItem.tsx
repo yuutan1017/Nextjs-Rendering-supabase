@@ -11,6 +11,7 @@ export const TaskItem: FC<Omit<Task, 'created_at' | 'user_id'>> = ({
 }) => {
   const update = useStore((state) => state.UpdateEditedTask);
   const { deleteTaskMutaion } = useMutateTask();
+  
   return (
     <li className="my-3 text-lg font-extrabold">
       <span>{title}</span>

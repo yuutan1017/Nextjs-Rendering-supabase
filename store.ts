@@ -16,7 +16,7 @@ const useStore = create<State>((set) => ({
     set({
       EditedNotice: {
         id: payload.id,
-        content: '',
+        content: payload.content,
       },
     }),
   ResetEditedNotice: () => set({ EditedNotice: { id: '', content: '' } }),

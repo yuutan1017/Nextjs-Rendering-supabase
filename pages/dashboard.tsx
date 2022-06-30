@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { useQueryClient } from 'react-query';
 import {
   LogoutIcon,
   DocumentTextIcon,
@@ -14,8 +15,11 @@ import { NoticeList } from '../components/NoticeList';
 import { Links } from '../components/Links';
 
 const Dashboard: NextPage = () => {
+  const queryClient = useQueryClient();
   const signOut = () => {
     supabase.auth.signOut();
+    queryClient.removeQueries('notices');
+    queryClient.removeQueries('todos');
   };
   return (
     <Layout title="Dashboard">
@@ -32,7 +36,7 @@ const Dashboard: NextPage = () => {
           <TaskList />
         </div>
 
-        <div>
+        <div className="m-3">
           <div className="my-3 flex justify-center ">
             <StatusOnlineIcon className=" h-8 w-8 text-blue-500" />
           </div>

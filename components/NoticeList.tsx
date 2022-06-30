@@ -1,9 +1,9 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 import { useQueryNotices } from '../hooks/useQueryNotices';
 import { Spinner } from './Spinner';
 import { NoticeItem } from './Noticeitem';
 
-export const NoticeList: VFC = () => {
+export const NoticeList: FC = () => {
   const { data: notices, status } = useQueryNotices();
   if (status === 'loading') return <Spinner />;
   if (status === 'error') return <p>{'Error'}</p>;
